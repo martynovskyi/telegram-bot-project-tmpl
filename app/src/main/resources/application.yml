@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: demo_project
+  flyway:
+    enabled: true
+    url: jdbc:postgresql://${POSTGRES_HOSTNAME}:5432/${POSTGRES_DB}
+    password: ${POSTGRES_PASSWORD}
+    user: ${POSTGRES_USER}
+    baseline-on-migrate: true
+  r2dbc:
+    url: r2dbc:postgresql://${POSTGRES_HOSTNAME}:5432/${POSTGRES_DB}
+    password: ${POSTGRES_PASSWORD}
+    username: ${POSTGRES_USER}
+logging:
+  logback:
+    rollingpolicy:
+      max-file-size: 10MB
+      max-history: 60
+  level:
+    root: info
+    com.motokyi: debug
+    reactor.netty.http.client: info
+  file:
+    name: logs/demo-project-application.log

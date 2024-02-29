@@ -25,9 +25,7 @@ lombok = "org.projectlombok:lombok:1.18.30"
 jsoup = "org.jsoup:jsoup:1.17.2"
 
 postgresql = "org.postgresql:postgresql:42.7.2"
-postgresql-R2DBC = "org.postgresql:r2dbc-postgresql:1.0.4.RELEASE"
-
-
+postgresql-r2dbc = "org.postgresql:r2dbc-postgresql:1.0.4.RELEASE"
 
 julToSlf4j = { module = "org.slf4j:jul-to-slf4j", version.ref = "slf4j" }
 slf4jApi = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
@@ -40,7 +38,7 @@ spring-boot-dependencies = { module = "org.springframework.boot:spring-boot-depe
 spring-boot-starter-webflux = { module = "org.springframework.boot:spring-boot-starter-webflux", version.ref = "spring-boot" }
 spring-boot-starter-jdbc = { module = "org.springframework.boot:spring-boot-starter-jdbc", version.ref = "spring-boot" }
 spring-boot-starter-data-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa", version.ref = "spring-boot" }
-spring-boot-starter-data-R2DBC = { module = "org.springframework.boot:spring-boot-starter-data-r2dbc", version.ref = "spring-boot" }
+spring-boot-starter-data-r2dbc = { module = "org.springframework.boot:spring-boot-starter-data-r2dbc", version.ref = "spring-boot" }
 spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "spring-boot" }
 
 mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito" }
@@ -61,6 +59,7 @@ testcontainers-junit = { module = "org.testcontainers:junit-jupiter", version.re
 
 
 [bundles]
-springBootService = ["spring-boot-starter-webflux"]
+spring-boot-service-reactive = ["spring-boot-starter-webflux", "spring-boot-starter-data-r2dbc"]
 flyway = ["flyway-core", "flyway-postgresql"]
+junit-jupiter = ["junit-jupiter-engine", "junit-jupiter-params", "junit-jupiter-api"]
 
