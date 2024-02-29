@@ -1,0 +1,66 @@
+[versions]
+spring-boot = "3.2.3"
+springframework = "6.1.4"
+reactor = "3.6.3"
+flyway = "10.8.1"
+slf4j = "2.0.12"
+logback = "1.5.0"
+mockito = "5.10.0"
+junit = "5.10.2"
+assertj = "3.25.3"
+testcontainers = "1.19.6"
+[plugins]
+springBoot = { id = "org.springframework.boot", version.ref = "spring-boot" }
+
+[libraries]
+
+commons-io = "commons-io:commons-io:2.15.1"
+commons-lang3 = "org.apache.commons:commons-lang3:3.14.0"
+commons-collections4 = "org.apache.commons:commons-collections4:4.4"
+
+flyway-core = { module = "org.flywaydb:flyway-core", version.ref = "flyway" }
+flyway-postgresql = { module = "org.flywaydb:flyway-database-postgresql", version.ref = "flyway" }
+
+lombok = "org.projectlombok:lombok:1.18.30"
+jsoup = "org.jsoup:jsoup:1.17.2"
+
+postgresql = "org.postgresql:postgresql:42.7.2"
+postgresql-R2DBC = "org.postgresql:r2dbc-postgresql:1.0.4.RELEASE"
+
+
+
+julToSlf4j = { module = "org.slf4j:jul-to-slf4j", version.ref = "slf4j" }
+slf4jApi = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
+
+logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
+logback-core = { module = "ch.qos.logback:logback-core", version.ref = "logback" }
+
+spring-core = { module = "org.springframework:spring-core", version.ref = "springframework" }
+spring-boot-dependencies = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "spring-boot" }
+spring-boot-starter-webflux = { module = "org.springframework.boot:spring-boot-starter-webflux", version.ref = "spring-boot" }
+spring-boot-starter-jdbc = { module = "org.springframework.boot:spring-boot-starter-jdbc", version.ref = "spring-boot" }
+spring-boot-starter-data-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa", version.ref = "spring-boot" }
+spring-boot-starter-data-R2DBC = { module = "org.springframework.boot:spring-boot-starter-data-r2dbc", version.ref = "spring-boot" }
+spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "spring-boot" }
+
+mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito" }
+mockito-junit-jupiter = { module = "org.mockito:mockito-junit-jupiter", version.ref = "mockito" }
+
+junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" }
+junit-jupiter-params = { module = "org.junit.jupiter:junit-jupiter-params", version.ref = "junit" }
+junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit" }
+
+assertj = { module = "org.assertj:assertj-core", version.ref = "assertj" }
+
+reactor-core = { module = "io.projectreactor:reactor-core", version.ref = "reactor" }
+reactor-test = { module = "io.projectreactor:reactor-test", version.ref = "reactor" }
+
+testcontainers-postgresql = { module = "org.testcontainers:postgresql", version.ref = "testcontainers" }
+testcontainers-r2dbc = { module = "org.testcontainers:r2dbc", version.ref = "testcontainers" }
+testcontainers-junit = { module = "org.testcontainers:junit-jupiter", version.ref = "testcontainers" }
+
+
+[bundles]
+springBootService = ["spring-boot-starter-webflux"]
+flyway = ["flyway-core", "flyway-postgresql"]
+
