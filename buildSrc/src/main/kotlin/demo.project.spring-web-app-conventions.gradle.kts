@@ -3,13 +3,16 @@ plugins {
     idea
 }
 
+val usernameProvider = providers.gradleProperty("github.packages.read.username")
+val passwordProvider = providers.gradleProperty("github.packages.read.token")
+
 repositories {
     mavenCentral()
     maven {
         url = uri("https://maven.pkg.github.com/martynovskyi/telegram-bot-api-reactive")
         credentials {
-            username = extra["github.packages.read.username"].toString()
-            password = extra["github.packages.read.token"].toString()
+            username = usernameProvider.getOrNull()
+            password = passwordProvider.getOrNull()
         }
     }
 }
