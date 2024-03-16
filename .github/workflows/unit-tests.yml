@@ -14,4 +14,4 @@ jobs:
           distribution: 'adopt'
       - uses: actions/checkout@v4
       - name: Unit Tests with Gradle
-        run: ./gradlew clean test
+        run: ./gradlew clean test -Pgithub.packages.read.username=${{ secrets.GH_TG_LIB_USERNAME }} -Pgithub.packages.read.token=${{ secrets.GH_TG_LIB_TOKEN }}
